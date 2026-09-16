@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobreposições</title>
+    <style>
+        
+
+        .caixa1 {
+            width: 900px;
+            position: relative;
+            background-color: purple;
+        }
+
+        .caixa1 img {
+            width: 900px;
+            display: block; /* Dica de ouro: remove um mini espaçamento fantasma que imagens têm embaixo */
+        }
+
+        .caixa2{
+            /* border: 3px solid black; */
+            border-radius: 30px;
+
+            background-color: orange;
+            color: white;
+
+            padding: 10px 16px;
+            width: 150px;
+
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+
+            position: absolute;
+            bottom: 2.5em;
+            left: 2em;
+
+        }
+
+        .caixa3{
+            border: 2px dotted purple;
+            border-bottom-right-radius: 30px; 
+            border-bottom-left-radius: 30px;
+
+            background-color: white;
+            color: purple;
+
+            text-align: center;
+            font-size: large;
+
+            width: 700px;
+            padding: 20px;
+
+            position: absolute;
+            left: 10%;
+            right: 10%;
+            bottom: -2.6em;
+            
+
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Exercício</h1>
+
+<div class="caixa1">
+    <!-- A imagem de fundo que define o tamanho do bloco -->
+    <img src="../Imagens/img/banner.png" alt="">
+
+    <!-- Os elementos que vão flutuar por cima da imagem -->
+    <div class="caixa2">Tempo limitado</div>
+    <div class="caixa3">Quero a promoção</div>
+</div>
+
+    
+</body>
+</html>

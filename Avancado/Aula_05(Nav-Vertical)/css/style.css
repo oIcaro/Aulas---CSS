@@ -1,0 +1,93 @@
+
+        #header ul{
+            list-style-type: none;
+            padding: 0;
+            width: 200px;
+        }
+
+        #header li a::first-letter{
+            color: white;
+            font-weight: bold;
+            padding: 0 5px 0;
+        }
+
+        #header li a{
+            display: block;
+            padding: 10px;
+            color: black;
+            font-weight: bold;
+            text-decoration: none;
+            background-color: #f7b600;
+
+
+            /* 
+            CASO VÁ UTILIZAR IMAGEM PARA A SETA
+
+            background: #f7b600 url("img/seta.png") no-repeat 0.5em center;
+            
+            */
+
+        }
+
+        #header li a:hover{
+
+            background-color: #f99200;
+            padding: 10px 20px 10px;
+            color: white;
+
+            /* 
+            CASO VÁ UTILIZAR IMAGEM PARA A SETA
+
+            background: #f7b600 url("img/seta.png") no-repeat 1.5em center;
+            
+            */
+
+        }
+
+        #header li a:active{
+            background-color: #885000;
+        }
+
+        #header li.selecionado a{
+            background-color: #f99200;
+            padding: 10px 20px 10px;
+        }
+
+
+
+
+
+
+
+
+
+        /* CSS DO MENU UTILIZANDO DIVS */
+
+        /* #header{
+            background-color: orange;
+            float: left;
+            width: 200px;
+        } */
+
+
+        /* a{
+            text-decoration: none;
+            color: black;
+        }
+
+        #header div::first-letter{
+            color: white;
+            padding: 0px 5px 0px;
+        }
+
+        #header div{
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        #header div:hover{
+            background-color: orangered;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px 10px;
+        } */

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+        body{
+            background-color: purple;
+            /* O body tem, por padrão, uma posição */
+        }
+
+        #container{
+            width: 700px;
+            background-color: white;
+            margin: 10px auto;
+            padding: 8px;
+            position: relative; /* CRUCIAL: Serve de barreira para a classe .absoluta não fugir para o body roxo */
+        }
+
+        .borda{
+            border: 1px solid red;
+        }
+
+        /* POSITION: STATIC (Comportamento Padrão)
+           O que faz: O elemento segue o fluxo natural de empilhamento do HTML.
+           Impacto no seu print: É o que acontece com os blocos sob o título "Fluxo normal". 
+           Eles respeitam os limites do #container branco, ficam um abaixo do outro e aceitam 
+           as bordas vermelhas sem bugar.
+        */
+        .estatica{  /* Fluxo Normal */
+            position: static;
+        }
+
+        /* POSITION: RELATIVE (Deslocamento sem quebrar o fluxo)
+           O que faz: Move o elemento a partir de onde ele DEVERIA estar originalmente.
+           Impacto no seu print: Repare no bloco verde (Posição Relativa). Ele andou 20px para baixo (top: 20px) 
+           e 20px para a direita (left: 20px). 
+           Detalhe crucial na tela: Note que o parágrafo de baixo NÃO subiu. O espaço original do bloco verde 
+           continua lá, vazio, guardando o lugar dele. O bloco verde apenas "flutua" deslocado e chega a passar 
+           por cima do parágrafo de baixo.
+           (Nota sobre o seu código: você colocou 'right: 30px' junto com 'left: 20px'. Quando há conflito, 
+           o 'left' ganha por padrão, então o 'right' foi ignorado).
+        */
+        .relativa{
+           position: relative;
+           top: 20px;
+           left: 20px;
+           right: 30px; /* Ignorado pelo navegador porque o left tem prioridade */
+        }
+
+        /* POSITION: ABSOLUTE (Arrancado do fluxo, colado no pai posicionado)
+           O que faz: O elemento vira um fantasma e ignora o fluxo do HTML. Ele se posiciona usando as bordas 
+           do primeiro pai que tiver uma posição definida (o seu #container que é relative).
+           Impacto no seu print: Repare no bloco rosa (Posição absoluta). Como você colocou 'top: 0' e 'left: 0', 
+           ele ignorou o texto "Posição absoluta" e colou lá no topo esquerdo do container branco, cobrindo o título!
+           O maior impacto: Como ele saiu do fluxo, o título "Posição absoluta" subiu para o topo da página, como se 
+           o parágrafo rosa nunca estivesse ali na estrutura.
+        */
+        .absoluta{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 500px;
+            margin: 0;
+        }
+
+
+        /* POSITION: FIXED (Colado na janela do monitor)
+           O que faz: Arranca o elemento do fluxo e o prende na tela do usuário (viewport), ignorando tudo.
+           Impacto no seu print: Veja o bloco verde "Chat" no canto inferior esquerdo. 
+           Embora no código HTML você tenha colocado ele no topo (dentro do #container), os comandos 
+           'bottom: 0' e 'left: 0' arrancaram ele de lá e jogaram no canto esquerdo inferior do monitor.
+           Impacto visual: Ele flutua sobre o fundo roxo da página. Se você encher essa página de texto e rolar 
+           o scroll para baixo, o container branco vai subir, mas o chat verde vai ficar pregado exatamente ali.
+        */
+        .fixa{
+            position: fixed;
+            width: 200px;
+            height: 120px;
+            bottom: 0;
+            left: 0;
+            z-index: 10; /* Garante que ele fique por cima de qualquer outro elemento que passe por baixo */
+        }
+
+    </style>
+    <title>Posicionamentos</title>
+</head>
+<body>
+        <div id="container">
+
+            <div class="fixa" style="background-color: green;">
+                <h3>Chat</h3>
+                <button>Enviar mensagem</button>
+            </div>
+
+            <h1 class="borda">Posição absoluta</h1>
+            <p class="borda absoluta" style="background-color: lightpink;">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus blanditiis fuga facilis, libero error, temporibus tenetur sint neque, vel nemo voluptate modi adipisci nostrum placeat necessitatibus amet pariatur beatae! Accusamus.
+            </p>
+
+            <hr>
+
+            <h1 class="borda">Posição Relativa</h1>
+            <p class="borda relativa" style="background-color: lightgreen;">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus blanditiis fuga facilis, libero error, temporibus tenetur sint neque, vel nemo voluptate modi adipisci nostrum placeat necessitatibus amet pariatur beatae! Accusamus.
+            </p>    
+            
+            <p class="borda">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus blanditiis fuga facilis, libero error, temporibus tenetur sint neque, vel nemo voluptate modi adipisci nostrum placeat necessitatibus amet pariatur beatae! Accusamus.
+            </p>   
+            
+            <hr>
+
+            <h1 class="borda">Fluxo normal</h1>
+            <p class="borda">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus blanditiis fuga facilis, libero error, temporibus tenetur sint neque, vel nemo voluptate modi adipisci nostrum placeat necessitatibus amet pariatur beatae! Accusamus.
+            </p>    
+            
+            <p class="borda">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus blanditiis fuga facilis, libero error, temporibus tenetur sint neque, vel nemo voluptate modi adipisci nostrum placeat necessitatibus amet pariatur beatae! Accusamus.
+            </p>            
+
+            <p class="borda">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus blanditiis fuga facilis, libero error, temporibus tenetur sint neque, vel nemo voluptate modi adipisci nostrum placeat necessitatibus amet pariatur beatae! Accusamus.
+            </p>   
+        </div>
+    
+</body>
+</html>

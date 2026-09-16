@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+
+    <style>
+        #card-produto{
+            width: 250px;
+            background-color: gray;
+            border: 1px solid #DDD;
+            padding: 15px;
+
+            /* adição */
+            position: relative;
+        }
+
+        .etiqueta-promocao{
+
+            /* adição */
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            /* z-index: 2; */
+
+
+            background-color: red;
+            color: white;
+            padding: 5px;
+            font-weight: bold;
+        }
+
+        /* #card-produto img{
+            position: relative;
+        } */
+
+    </style>
+
+
+</head>
+<body>
+    
+    <div id="card-produto">
+        <span class="etiqueta-promocao">10% OFF</span>
+
+        <img src="./img/tenis" alt="" style="width: 100%;">
+        <h3>Tenis de corrida</h3>
+        <p>R$299,90</p>
+    </div>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+body {
+    background-color: cornflowerblue;
+}
+
+#conteudo {
+    /* RESPONSIVIDADE: Define que a caixa branca nunca passará de 1000px em telas grandes, 
+       mas se adaptará perfeitamente e encolherá se o seu navegador for menor que isso */
+    max-width: 900px; 
+    
+    /* FLUIDEZ: Garante que o bloco use todo o espaço horizontal disponível da janela 
+       ou da sua metade de tela atual */
+    width: 100%;       
+
+    /* FLEXIBILIDADE DE MARGEM: Cria um espaçamento de 30px no topo da página para o bloco respirar, 
+       calcula as laterais automaticamente (auto) para manter o site centralizado na tela, e zera a base */
+    margin: 30px auto 0;
+
+    background-color: white;
+    padding: 15px;
+    position: relative;
+}
+
+#header {
+    position: relative; 
+    background-color: dodgerblue;
+    padding: 15px;
+    
+    /* ESTRUTURA FLEXÍVEL: Transforma o cabeçalho em um container pai do Flexbox, 
+       colocando seus elementos filhos diretos organizados em linha */
+    display: flex;
+    
+    /* ALINHAMENTO HORIZONTAL: Distribui os filhos jogando-os exatamente para o centro real 
+       da faixa azul (perfeito para alinhar o seu bloco de links) */
+    justify-content: center; 
+
+    /* ALINHAMENTO VERTICAL: Centraliza os elementos pelo eixo Y (profundidade de altura), 
+       garantindo que o meio dos textos dos links bata com o meio da logo */
+    align-items: center;     
+}
+
+#logo {
+    width: 120px;
+    
+    /* TRUQUE DE FLUXO: Arranca a logo Magalu do fluxo do Flexbox, transformando-a em um fantasma. 
+       Isso faz com que o Flexbox ignore a existência dela na hora de calcular o centro real para os links */
+    position: absolute; 
+    
+    /* ANCORAGEM: Cola a logo de forma fixa a 15px de distância da borda esquerda do #header azul */
+    left: 15px;         
+}
+
+#links {
+    /* MINI-CONTAINER FLEX: Ativa o Flexbox também na caixinha dos links para que possamos 
+       controlar o espaçamento interno deles sem usar margens individuais */
+    display: flex;
+    
+    /* ESPAÇAMENTO MODERNO: Cria uma folga exata de 10px entre cada link de navegação, 
+       sem aplicar nada nas pontas externas */
+    gap: 10px;
+}
+
+#header a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    
+    /* TIPOGRAFIA: Aumenta o tamanho da fonte dos links em 20% com base no tamanho 
+       padrão herdado do navegador (1.2em) */
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#header a:hover {
+    color: dodgerblue;
+    background-color: white;
+    padding: 10px;
+}
+
+#logo-novo {
+    /* REMOÇÃO DE FLUXO: Também arranca o selo roxo do fluxo normal, fazendo com que ele 
+       ignore o cabeçalho azul e os textos */
+    position: absolute;
+    
+    /* COORDENADAS NEGATIVAS: Puxa o selo 15px para cima e 15px para a direita. 
+       Como o #header azul está recuado por causa do padding do #conteudo, esses valores negativos 
+       fazem o selo saltar para fora do azul e colar perfeitamente na quina viva do bloco branco */
+    top: -15px;   
+    right: -15px; 
+    
+    width: 150px; 
+}
+
+#chat {
+    background-color: palevioletred;
+    width: 150px;
+    height: 200px;
+    padding: 10px;
+    
+    /* PERSISTÊNCIA NA TELA: Arranca totalmente o chat do layout do site e o prende na janela 
+       visível do monitor do usuário (viewport). Ele fica completamente imune à rolagem da página */
+    position: fixed;
+    
+    /* ANCORAGEM FIXA: Trava o elemento no canto inferior esquerdo absoluto da tela do computador */
+    bottom: 0;
+    left: 0;
+}
