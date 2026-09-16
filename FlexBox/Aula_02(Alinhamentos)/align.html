@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alinhamentos</title>
+    <style>
+
+        body{
+            background-color: black;
+        }
+
+        h2{
+            color: white;
+        }
+
+        .container-flex-row{
+            height: 300px;
+            width: 200px;
+            border: 4px solid red;
+            display: flex;
+            flex-direction: row ;
+
+            /* ALIGN ITENS+ */
+            justify-content: center;
+            align-items: flex-start;
+
+            /* ALIGN CONTENT */
+             flex-wrap: wrap;
+             align-content: flex-end;
+             
+        }
+
+        .container-flex-row > div{
+            color: white;
+            padding: 4px;
+            margin: 4px;
+            border: 4px solid white;
+        }
+
+
+
+         .container-flex-column{
+            height: 200px;
+            width: 400px;
+            border: 4px solid red;
+            display: flex;
+            flex-direction: column;
+
+            /* ALIGN ITENS+ */
+            justify-content: flex-start;
+            align-items: center;
+
+            /* ALIGN CONTENT */
+             flex-wrap: wrap;
+             align-content: flex-start;
+        }
+
+        .container-flex-column > div{
+            color: white;
+            padding: 4px;
+            margin: 4px;
+            border: 4px solid white;
+        }
+
+
+
+
+
+
+        .grande{
+            font-size: 3em;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Display Flex</h1>
+
+    <h2>Row</h2>
+    <div class="container-flex-row">
+        <div>01</div>
+        <div>02</div>
+        <div>03</div>
+        <div>01</div>
+        <div>02</div>
+        <div>03</div>
+        <div>01</div>
+        <div>02</div>
+        <div>03</div>
+        <div>01</div>
+        <div>02</div>
+        <div>03</div>
+    </div>
+    
+    <h2>Column</h2>
+    <div class="container-flex-column">
+        <div>01</div>
+        <div>02</div>
+        <div>03</div>
+        <div>01</div>
+        <div>02</div>
+        <div>03</div>
+        <div>01</div>
+        <div>02</div>
+        <div>03</div>
+        <div>01</div>
+        <div>02</div>
+        <div>03</div>
+    </div>
+
+</body>
+</html>

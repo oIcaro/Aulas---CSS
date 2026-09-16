@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Testes</title>
+        <style>
+            body{
+            background-color: black;
+            margin: 0;
+            }
+            /* CABEÇALHO */
+            header{
+            color: white;
+            border: 4px solid blue;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+            }
+            #logo{
+            width: 60px;
+            height: 60px;
+            border: 4px solid green;
+            }
+            .vazio{
+            width: 60px;
+            height: 60px;
+            background-color: red;
+            }
+            nav > ul{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            list-style: none;
+            }
+
+
+
+            /* PRINCIPAL */
+            .container-flex {
+            margin: 0 auto;
+            width: 100%;
+            max-width: 1200px;
+            border: 4px solid red;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between; /* Mudamos para colar nas pontas e aproveitar espaço */
+            box-sizing: border-box; /* Casca de bala: impede que a borda e o padding aumentem o tamanho total do container */
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+
+            #principal, #lateral, #outro-conteudo, #completar, #div-quatro{
+            color: white;
+            padding: 4px;
+            margin: 4px;
+            border: 4px solid white;
+            }
+
+
+            #principal {
+                width: 100%; /* Ocupa 100% da coluna da direita */
+                height: 500px;
+            }
+
+
+            /* Sua coluna da direita continua empilhando o bloco 01 e a nova linha */
+            .coluna-direita {
+                width: 72%; /* A coluna da direita ocupa o resto (72%) */
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            /* A nova linha que força a 03 e a 04 a ficarem lado a lado */
+            .linha-inferior {
+            display: flex;
+            flex-direction: row; /* Lado a lado */
+            justify-content: space-between;
+            gap: 15px; /* Cria um espacinho controlado entre a 03 e a 04 */
+            }
+
+
+            /* Ajuste o tamanho da 04 se necessário */
+            #div-quatro {
+                width: 35%; /* Proporção para ficar parecido com os 285px anteriores */
+                height: 450px;
+            }
+
+
+            #lateral {
+                width: 25%; /* Em vez de 300px fixos, ela ocupa 25% do espaço */
+            }
+
+            #outro-conteudo {
+                width: 63%; /* Proporção para ficar parecido com os 500px anteriores */
+                height: 450px;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <div id="logo">logo</div>
+            <nav>
+                <ul>
+                    <li>LINK 1</li>
+                    <li>LINK 1</li>
+                    <li>LINK 1</li>
+                    <li>LINK 1</li>
+                </ul>
+            </nav>
+            <div class="vazio"></div>
+        </header>
+        <div class="container-flex">
+            <!-- Barra Lateral Esquerda -->
+            <div id="lateral">02</div>
+            <!-- Coluna da Direita -->
+            <div class="coluna-direita">
+                <!-- Bloco de cima sozinho -->
+                <div id="principal">01</div>
+                <!-- NOVA LINHA para juntar a 03 e a 04 -->
+                <div class="linha-inferior">
+                    <div id="outro-conteudo">03</div>
+                    <div id="div-quatro">04</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
