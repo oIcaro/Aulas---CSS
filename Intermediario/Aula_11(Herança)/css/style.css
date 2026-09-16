@@ -1,0 +1,31 @@
+/* Herança */
+
+/* body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: black;
+    border: 1px solid red;
+    padding: 3em;
+    margin: 2em;
+}
+
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    color: violet;
+} */
+
+
+/* Especificidade */
+
+/* p{
+    color: red;
+}
+
+p[id]{
+    border: 1px solid red;
+} */
+
+#promocao{
+    color: hotpink;
+}

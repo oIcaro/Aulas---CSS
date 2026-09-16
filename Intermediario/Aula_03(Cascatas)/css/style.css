@@ -1,0 +1,29 @@
+.primal{
+    color: purple;
+}
+
+.second{
+    color: red;
+}
+
+.span{
+    color: black;
+}
+
+
+/* div{
+    border: 1px solid black;
+} 
+    
+Esse exemplo afeta todas as DIVS
+
+*/
+
+
+/* div > p{
+    border: 1px solid black;
+} 
+    
+Esse exemplo afeta TODOS os P existentes em alguma DIV (filhos)
+
+*/

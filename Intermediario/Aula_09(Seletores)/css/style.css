@@ -1,0 +1,54 @@
+/* /* /* *{
+    border: 1px solid red;
+}
+
+.destaque{
+    background-color: red;
+}
+
+.titulo{
+    color: white;
+}
+
+p.destaque{
+    background-color: purple;
+}
+
+h1.destaque{
+    background-color: red;
+} 
+
+
+div h1{
+    background-color: orange;
+}
+
+
+li>a{
+    color: brown;
+    text-decoration: none;
+}
+
+h1~p{
+    color: brown;
+    border: 1px solid brown;
+} */
+
+
+h1{
+    color: green;
+}
+
+h1+p{
+    border-top: 4px solid gray;
+    padding-top: 10px;
+}
+
+p>a{
+    background-color: purple;
+    color: white;
+}
+
+.destaque{
+    color: purple;
+}

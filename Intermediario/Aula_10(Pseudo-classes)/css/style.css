@@ -1,0 +1,82 @@
+/* Pseudo-classes*/
+
+/*
+a:hover{
+    background-color: purple;
+    color: white;
+    font-size: 24px;
+}
+     */
+
+
+/* Links */
+a, a:link{
+    text-decoration: none;
+    color: blueviolet;
+    padding: 0.5em 1em;
+    font-size: 24px;
+}
+
+/* Links não visitados */
+/* a:link{
+    color: gray;
+} */
+
+
+/* Links visitados */
+/* a:visited{
+    color: red;
+} */
+
+ 
+/* Links Hover */
+a:hover{
+    background-color: blueviolet;
+    color: white;
+
+}
+
+/* Links ativos */
+a:active{
+    background-color: lightblue;
+}
+
+
+/* Formulários */
+
+input:checked{
+    margin-left: 20px;
+}
+
+input:focus{
+    background-color: purple;
+    color: white;
+}
+
+input:required{
+    border: 2px solid red;
+}
+
+
+/*Pseudo-elementos*/
+
+p::first-line{
+    color: red;
+}
+
+p::first-letter{
+    font-size: 2em;
+    color: purple;
+}
+
+p::selection{
+    background-color: yellow;
+}
+
+h2::before{
+    content: "{";
+}
+
+h2::after{
+    content: "}";
+}

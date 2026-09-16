@@ -1,0 +1,44 @@
+/* body{
+    border: 3px solid black;
+}
+
+.pixel{
+    border: 1px solid black;
+    background-color: red;
+    padding: 8px;
+    width: 200px;
+}
+
+.porcentagem{
+    border: 1px solid black;
+    background-color: red;
+    padding: 8px;
+    width: 50%;
+}
+
+#area{
+    border: 3px solid black;
+    width: 500px;
+}
+
+.vw{
+    border: 1px solid black;
+    background-color: red;
+    padding: 8px;
+    width: 50vw;
+}
+
+/* .vh{
+    border: 1px solid black;
+    background-color: red;
+    padding: 8px;
+    height: 50vh;
+} */
+
+body{
+    font-size: 32px;
+}
+
+p{
+    font-size: 1em;
+}
