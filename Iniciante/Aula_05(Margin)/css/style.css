@@ -1,0 +1,33 @@
+body{
+    margin: 0;
+}
+
+#header{
+    background: #1D85F8;
+    padding: 10px;
+}
+
+a{
+    border: 1px solid white;
+    padding: 10px;
+    background-color: lightskyblue;
+    color: dodgerblue;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+
+#back-banner{
+    background-color: purple;
+}
+
+#banner{
+  width: 1000px;
+  margin: 0 auto;
+}
+
+#content{
+    width: 1300px;
+    margin: auto;
+    font-size: large;
+}

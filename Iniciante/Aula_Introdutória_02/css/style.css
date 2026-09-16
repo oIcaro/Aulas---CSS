@@ -1,0 +1,30 @@
+a{
+    color: green;
+
+}
+
+p{
+    color: rgba(97, 21, 96, 0.86);
+}
+
+h2{
+    font-family: 'Courier New', Courier, monospace;
+    color: blue;
+}
+
+
+ul > li{
+    background-color: aquamarine;
+    border: 2px solid darkblue;
+}
+
+table{
+    border: 5px solid;
+    border-color: brown;
+    background-color: rgb(255, 119, 0);
+}
+
+tr, td{
+    border: 2px solid;
+    background-color: rgb(255, 119, 0);
+}

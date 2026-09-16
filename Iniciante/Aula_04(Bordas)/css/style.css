@@ -1,0 +1,50 @@
+h1{
+    /*
+        1. Espessura
+        2. Estilo
+        3. Cor
+
+    border-width: 4px;
+    border-style: solid;
+    border-color: purple;
+    */
+
+    /*Superior, lateral direita, inferior, lateral esquerda*/
+
+    /*border-width: 20px;
+    border-color: purple red green black;
+    border-style: solid dotted dashed double;*/
+
+    /*border-width: 10px 15px;
+    border-color: purple red;
+    border-style: solid dotted;*/
+
+    /*border-top-width: 10px;
+    border-top-color: purple;
+    border-top-style: solid;*/
+
+    /*border-top: 4px solid red;
+    border-right: 4px solid purple;
+    border-bottom: 4px solid black;
+    border-left: 4px solid green;*/
+
+    /*border: 4px solid red;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;*/
+
+    background: orange;
+    padding: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom: 5px dotted black;
+}
+
+p{
+    background: lightblue;
+    padding: 10px;
+    border-radius: 20px;
+    border-right: 12px solid rgb(0, 0, 91);
+    border-left: 12px solid rgb(0, 0, 91);
+}

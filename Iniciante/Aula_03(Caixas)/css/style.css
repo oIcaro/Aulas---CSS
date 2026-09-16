@@ -1,0 +1,19 @@
+
+/*body{
+    border: 2px solid green;
+}*/
+
+h1{
+    border: 3px solid rgb(211, 137, 0);
+    padding: 20px;
+    margin: 20px;
+    background: orange;
+    color: white;
+}
+
+p{
+    border: 3px solid grey;
+    background: rgb(193, 193, 193);
+    padding: 10px;
+    margin: 20px;
+}
