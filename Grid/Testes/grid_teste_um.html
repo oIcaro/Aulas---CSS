@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testes em GRID</title>
+    <!-- Conectando o arquivo CSS externo -->
+    <link rel="stylesheet" href="css/grid-um.css">
+</head>
+<body>
+
+    <!-- Div principal que vira o GRID, conectada ao .grid-container do CSS -->
+    <div class="grid-container">
+
+        <!-- Área do topo (conectada ao grid-area: topo) -->
+        <header>
+            <!-- Menu de navegação do site -->
+            <nav class="menu">
+                <!-- logotipo -->
+                <div>
+                    <!-- Link do logo, abrindo em nova guia -->
+                    <a href="https://discord.com/" target="_blank">
+                        <img id="logo" src="img/favico.ico" alt="">
+                    </a>
+                </div>
+                <!-- Lista não ordenada com os links do menu -->
+                <ul>
+                    <!-- Link abrindo em nova guia (target="_blank") -->
+                    <a href="https://www.google.com/" target="_blank">
+                        <li>Home</li>
+                    </a>
+
+                    <a href="https://www.google.com/" target="_blank">
+                        <li>Produtos</li>
+                    </a>
+
+                    <a href="https://www.google.com/" target="_blank">
+                        <li>Contato</li>
+                    </a>
+
+                    <a href="https://www.google.com/" target="_blank">
+                        <li>Sobre nós</li>
+                    </a>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Div do banner (conectada ao grid-area: banner) -->
+        <div class="banner">
+        </div>
+
+        <!-- Barra lateral (conectada ao grid-area: sidebar) -->
+        <aside>
+            <h4>Exemplo de ASIDE</h4>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat deleniti officia pariatur incidunt assumenda hic quis nemo quae sunt quasi temporibus dolores, ex atque quos perspiciatis sequi. Quisquam, illo recusandae.
+            </p>
+        </aside>
+
+        <!-- Conteúdo principal (conectado ao grid-area: conteudo) -->
+        <main>
+            <h4>Conteudo Principal</h4>
+        </main>
+
+        <!-- Div de propaganda/anúncio (conectada ao grid-area: propaganda) -->
+        <!--
+        <div class="propaganda">
+            <h4>Propaganda ou Anuncios</h4>
+        </div>
+        -->
+
+        <!-- Rodapé do site (conectado ao grid-area: rodape) -->
+        <footer>
+            <!-- Div que agrupa as 4 colunas de conteúdo do rodapé (conectada ao .footer-colunas do CSS) -->
+            <div class="footer-colunas">
+
+                <!-- Primeira coluna: logo + nome + descrição da empresa -->
+                <div class="footer-sobre">
+                    <!-- Logo da empresa/marca -->
+                    <img src="img/favico.ico" width="60px" alt="Logo da Empresa" class="footer-logo">
+                    <h4>Discord</h4>
+                    <p>Um mundo conectado, crie sua própria realidade apenas com um clique.</p>
+                </div>
+
+                <!-- Segunda coluna: links úteis de navegação -->
+                <div class="footer-links">
+                    <h4>Links Úteis</h4>
+                    <a href="#">Home</a>
+                    <a href="#">Produtos</a>
+                    <a href="#">Contato</a>
+                </div>
+
+                <!-- Terceira coluna: informações de contato -->
+                <div class="footer-contato">
+                    <h4>Contato</h4>
+                    <p>email@empresa.com</p>
+                    <p>(11) 99999-9999</p>
+                </div>
+
+                <!-- Quarta coluna: redes sociais -->
+                <div class="footer-social">
+                    <h4>Redes Sociais</h4>
+                    <!-- Link com ícone + texto (imagem e texto separados, sem aninhar texto dentro da tag img) -->
+                    <a href="#">
+                        <img src="img/favico.ico" width="20px" alt="">
+                        Instagram
+                    </a>
+                    <a href="#">
+                        <img src="img/favico.ico" width="20px" alt="">
+                        Instagram
+                    </a>
+                    <a href="#">
+                        <img src="img/favico.ico" width="20px" alt="">
+                        Instagram
+                    </a>
+                    <a href="#">
+                        <img src="img/favico.ico" width="20px" alt="">
+                        Instagram
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Faixa final do rodapé, com o texto de direitos autorais -->
+            <div class="footer-copyright">
+                <p>&copy; 2026 Nome da Empresa. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

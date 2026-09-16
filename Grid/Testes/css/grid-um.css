@@ -1,0 +1,292 @@
+/* ==========================================================================
+   1) ALTERAÇÕES GERAIS (reset + estrutura do grid)
+   ========================================================================== */
+
+/* Dica: seletor coringa — aplica a TODOS os elementos da página (usado pro reset) */
+* {
+    /* A soma dos elementos em PX, ao invés de ser para fora, passa a ser para dentro (Uma caixa de 300px com padding, borda e etc) ao invés de aumentar o tamanho final da caixa e passar dos 300px, soma os valores e desconta do valor fixo imposto na caixa.*/
+    box-sizing: border-box;
+    /* Zerando espaçamento externo */
+    margin: 0;
+    /* zerando espaçamento interno */
+    padding: 0;
+}
+
+/* Dica: seletor da tag que envolve TODO o conteúdo visível da página */
+body {
+    /* mudando a cor de fundo */
+    /* background-color: black; */
+    /* mudando a cor das letras */
+    color: white;
+    /* alterando a familia da fonte */
+    font-family: sans-serif;
+    /* adicionando espaçamento INTERNO */
+    padding: 0px;
+    /* adicionando imagem de fundo */
+    background-image: url(../img/bg-cloud.svg);
+}
+
+/* CONTAINER PAI - CRIANDO GRADES */
+/* Dica: classe da div principal que vira o layout em grade */
+.grid-container {
+    /* transformando em layout grid */
+    display: grid;
+    /* Adicionando 3 colunas. As colunas da direita e da esquerda tem tamanho fixo de 200px, enquanto a coluna central ocupa todo o tamanho que sobra (descontando os das outras 2 colunas) */
+    grid-template-columns: 500px 1fr 200px;
+    /* Adicionando 3 linhas. A linha de cima com 100px de altura, a linha do meio com tamanho ajustável (minimo de 400px, sem valor maximo), e a linha de baixo com tamanho automático (cresce conforme o conteúdo do rodapé) */
+    grid-template-rows: 100px 700px minmax(400px, auto) auto;
+    /* espaçamento entre os itens */
+    /* gap: 20px; */
+    /* Desenho do MAPA do site usando o nome das áreas marcadas */
+    grid-template-areas:
+        "topo       topo        topo"
+        "banner     banner      banner"
+        "sidebar    conteudo    conteudo"
+        "rodape     rodape      rodape";
+}
+
+
+/* ==========================================================================
+   2) MENU (header + navegação + logo + estados de hover)
+   ========================================================================== */
+
+/* Dica: tag semântica do topo da página, onde geralmente fica o menu */
+header {
+    /* conectando ao nome que está no MAPA */
+    grid-area: topo;
+    /* mudando cor de fundo */
+    background-color: #3F99F2;
+    /* adicionando borda */
+    /* border: 2px solid white; */
+    /* transformando o elemento em FLEXBOX 
+    com o flex-direction ROW por PADRÃO*/
+    display: flex;
+    /* alinhando VERTICALMENTE em centro */
+    align-items: center;
+    /* alinhando HORIZONTALMENTE em centro */
+    justify-content: center;
+}
+
+/* Dica: classe que envolve logo + lista de links do menu */
+.menu {
+    /* transformando em flex */
+    display: flex;
+    /* alinhando verticalmente em centro */
+    align-items: center;
+    /* distribuindo o espaço entre os filhos (logo de um lado, links do outro) */
+    justify-content: space-between;
+    /* definindo a largura do menu dentro do header */
+    width: 90%;
+}
+
+/* Dica: a lista (ul) que está DENTRO da classe do menu */
+.menu ul {
+    /* transformando em flex */
+    display: flex;
+    /* retirando discos */
+    list-style-type: none;
+    /* retirando decoração de texto */
+    text-decoration: none;
+}
+
+/* Dica: links (a) dentro do menu */
+.menu a {
+    /* tirando sublinhado dos links */
+    text-decoration: none;
+}
+
+/* itens do menu */
+/* Dica: os itens de lista (li) que estão DENTRO da classe do menu */
+.menu li {
+    /* trocando cor de texto */
+    color: white;
+    /* aumentando espessura da fonte */
+    font-weight: bolder;
+    /* adicionando espaçamento interno */
+    padding: 15px;
+}
+
+/* hover do link do menu */
+/* Dica: estado de HOVER do link (a) que está DENTRO da lista do menu */
+.menu ul a:hover {
+    /* mudando cor de fundo */
+    background-color: rgba(255, 255, 255, 0.555);
+    /* espaçamento interno - esquerda e direita */
+    padding: 0px 10px 0px 10px;
+    /* tirando decoração de texto */
+    text-decoration: none;
+}
+
+/* hover dos itens do menu */
+/* Dica: estado de HOVER dos itens de lista (li) que estão DENTRO da classe do menu */
+.menu li:hover {
+    /* trocando cor de texto */
+    color: #2835BD;
+}
+
+/* Dica: id da imagem do logotipo no header */
+#logo {
+    /* definindo largura */
+    width: 60px;
+    /* definindo altura */
+    height: 60px;
+    /* border: 1px solid green; */
+}
+
+
+/* ==========================================================================
+   3) BANNER
+   ========================================================================== */
+
+/* Dica: classe da div de destaque grande, logo abaixo do topo */
+.banner {
+    /* conectando ao nome que está no MAPA */
+    grid-area: banner;
+    /* adicionando imagem de fundo */
+    background: url(../img/fundo.png);
+      /* estica/corta a imagem pra cobrir os 700px inteiros, sem repetir */
+    background-size: cover;     
+    /* impede a repetição que está causando a linha */
+    background-repeat: no-repeat; 
+    /* centraliza a parte da imagem que for exibida */
+    background-position: center;  
+    /* espaçamento externo inferior, empurrando o conteúdo abaixo (usando unidade de viewport) */
+    margin-bottom: 15vh;
+
+}
+
+
+/* ==========================================================================
+   4) SIDEBAR (aside)
+   ========================================================================== */
+
+/* Dica: tag semântica pra conteúdo secundário/lateral da página */
+aside {
+    /* conectando ao nome que está no MAPA */
+    grid-area: sidebar;
+    /* mudando cor de fundo */
+    background-color: red;
+    /* adicionando borda */
+    /* border: 2px solid white; */
+    /* adicionando espaçamento interno */
+    padding: 10px;
+}
+
+
+/* ==========================================================================
+   5) CONTEÚDO PRINCIPAL (main + propaganda)
+   ========================================================================== */
+
+/* Dica: tag semântica pro conteúdo principal/central da página */
+main {
+    /* conectando ao nome que está no  MAPA */
+    grid-area: conteudo;
+    /* mudando cor de fundo */
+    background-color: green;
+    /* adicionando borda */
+    /* border: 2px solid white; */
+    /* adicionando espaçamento interno */
+    padding: 10px;
+}
+
+/* Dica: classe da div de anúncio/publicidade */
+/* .propaganda { */
+/* conectando ao nome que está no MAPA */
+/* grid-area: propaganda; */
+/* mudando cor de fundo */
+/* background-color: lightcoral; */
+/* adicionando borda */
+/* border: 2px solid white; */
+/* adicionando espaçamento interno */
+/* padding: 10px; */
+/* } */
+
+
+/* ==========================================================================
+   6) RODAPÉ (footer + colunas internas + copyright)
+   ========================================================================== */
+
+/* Dica: tag semântica do rodapé da página */
+footer {
+    /* conectando ao nome que está no MAPA */
+    grid-area: rodape;
+    /* mudando cor de fundo - tom escuro da mesma família do azul do header, pra combinar sem ficar idêntico */
+    background-color: #1E3A5F;
+    /* adicionando borda */
+    /* border: 2px solid white; */
+    /* transformando em FLEXBOX */
+    display: flex;
+    /* alinhamento VERTICAL */
+    align-items: center;
+    /* alinhamento HORIZONTAL */
+    justify-content: center;
+    /* trocando a direção padrão (row) para column, empilhando footer-colunas e footer-copyright */
+    flex-direction: column;
+}
+
+/* Dica: classe da div que agrupa as 4 colunas de conteúdo do rodapé */
+.footer-colunas {
+    /* transformando em layout grid */
+    display: grid;
+    /* criando 4 colunas de larguras iguais */
+    grid-template-columns: repeat(4, 1fr);
+    /* espaçamento entre as colunas */
+    gap: 30px;
+    /* espaçamento interno do container */
+    padding: 40px 20px;
+}
+
+/* Dica: seletor que pega todas as colunas do rodapé, MENOS a primeira, pra criar as linhas divisórias */
+.footer-colunas > div:not(:first-child) {
+    /* borda esquerda cinza/transparente, separando as colunas */
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    /* espaçamento interno esquerdo, evitando que o texto encoste na borda */
+    padding-left: 20px;
+}
+
+/* Dica: classe da primeira coluna do rodapé (logo + nome + descrição da empresa) */
+.footer-sobre {
+    /* transformando em flex */
+    display: flex;
+    /* empilhando os filhos (logo, título, texto) verticalmente */
+    flex-direction: column;
+    /* espaçamento entre os filhos */
+    gap: 10px;
+}
+
+/* Dica: classe da imagem de logo dentro do footer-sobre */
+.footer-logo {
+    /* definindo largura */
+    width: 60px;
+}
+
+/* Dica: classes das colunas de links úteis e redes sociais do rodapé */
+.footer-links,
+.footer-social {
+    /* transformando em flex */
+    display: flex;
+    /* empilhando os links verticalmente */
+    flex-direction: column;
+    /* espaçamento entre os links */
+    gap: 8px;
+}
+
+/* Dica: links dentro da coluna de redes sociais (ícone + texto) */
+.footer-social a {
+    /* transformando em flex, pra alinhar ícone e texto lado a lado */
+    display: flex;
+    /* alinhando verticalmente em centro */
+    align-items: center;
+    /* espaçamento entre ícone e texto */
+    gap: 8px;
+}
+
+/* Dica: classe da faixa final do rodapé, com o texto de copyright */
+.footer-copyright {
+    /* borda superior sutil, separando visualmente do restante do rodapé */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /* centralizando o texto */
+    text-align: center;
+    /* espaçamento interno vertical */
+    padding: 15px 0;
+}

@@ -1,0 +1,153 @@
+/* seletor universal - afeta todos os elementos da página */
+* {
+    /* propriedade que muda como padding e border são somados ao tamanho da caixa */
+    box-sizing: border-box;
+    /* propriedade de espaçamento externo */
+    margin: 0;
+    /* propriedade de espaçamento interno */
+    padding: 0;
+}
+
+/* tag responsável por abrigar todo o conteúdo visível do site */
+body {
+    /* propriedade de cor de fundo */
+    background-color: black;
+    /* propriedade de cor do texto */
+    color: white;
+    /* propriedade da família da fonte */
+    font-family: sans-serif;
+    /* propriedade de espaçamento interno */
+    padding: 20px;
+}
+
+/* classe do container principal, onde o grid é montado */
+.container-grid{
+    /* propriedade que ativa o layout em grade */
+    display: grid;
+    /* propriedade que define a largura das colunas */
+    grid-template-columns: 200px 1fr 200px;
+    /* propriedade que define a altura das linhas (uma delas usa valor mínimo/máximo ajustável) */
+    grid-template-rows: 100px 300px minmax(400px, auto) 50px;
+    /* propriedade de espaçamento entre os itens do grid */
+    gap: 20px;
+    /* propriedade que desenha o mapa nomeado das áreas do grid */
+    grid-template-areas: 
+                "topo       topo        topo"
+                "banner     banner      banner"
+                "sidebar    conteudo    propaganda"
+                "rodape     rodape      rodape";
+}
+
+/* tag do topo do site */
+header{
+    /* propriedade que liga este elemento a uma área do mapa do grid */
+    grid-area: topo;
+    /* propriedade de cor de fundo */
+    background-color: #1e3a8a;
+    /* propriedade de borda */
+    border: 2px solid white;
+    /* propriedade que ativa layout flexível */
+    display: flex;
+    /* propriedade de alinhamento vertical no flex */
+    align-items: center;
+    /* propriedade de alinhamento horizontal no flex */
+    justify-content: center;
+}
+
+/* classe do bloco de destaque logo abaixo do topo */
+.banner{
+    /* propriedade que liga este elemento a uma área do mapa do grid */
+    grid-area: banner;
+    /* propriedade de cor de fundo */
+    background-color: orange;
+    /* propriedade de borda */
+    border: 2px solid white;
+    /* propriedade de espaçamento interno */
+    padding: 10px;
+}
+
+/* tag da coluna lateral */
+aside{
+    /* propriedade que liga este elemento a uma área do mapa do grid */
+    grid-area: sidebar;
+    /* propriedade de cor de fundo */
+    background-color: blueviolet;
+    /* propriedade de borda */
+    border: 2px solid white;
+    /* propriedade de espaçamento interno */
+    padding: 10px;
+}
+
+/* tag do conteúdo central da página */
+main{
+    /* propriedade que liga este elemento a uma área do mapa do grid */
+    grid-area: conteudo;
+    /* propriedade de cor de fundo */
+    background-color: pink;
+    /* propriedade de borda */
+    border: 2px solid white;
+}
+
+/* classe do bloco de anúncio */
+.propaganda{
+    /* propriedade que liga este elemento a uma área do mapa do grid */
+    grid-area: propaganda;
+    /* propriedade de cor de fundo */
+    background-color: yellow;
+    /* propriedade de borda */
+    border: 2px solid white;
+    /* propriedade de espaçamento interno */
+    padding: 10px;
+}
+
+/* tag do rodapé do site */
+footer{
+    /* propriedade que liga este elemento a uma área do mapa do grid */
+    grid-area: rodape;
+    /* propriedade de cor de fundo */
+    background-color: crimson;
+    /* propriedade de borda */
+    border: 2px solid white;
+    /* propriedade que ativa layout flexível */
+    display: flex;
+    /* propriedade de alinhamento vertical no flex */
+    align-items: center;
+    /* propriedade de alinhamento horizontal no flex */
+    justify-content: center;
+}
+
+/* lista dentro do menu */
+.menu ul{
+    /* propriedade que ativa layout flexível */
+    display: flex;
+    /* propriedade que remove os marcadores/discos da lista */
+    list-style-type: none;
+    /* propriedade que remove decoração de texto */
+    text-decoration: none;
+}
+
+/* itens da lista do menu */
+.menu li{
+    /* propriedade de cor do texto */
+    color: red;
+    /* propriedade de espessura da fonte */
+    font-weight: bold;
+    /* propriedade de espaçamento interno */
+    padding: 10px;
+}
+
+/* estado de hover do link dentro do menu */
+.menu a:hover{
+    /* propriedade de cor de fundo */
+    background-color: lightseagreen;
+    /* propriedade de espaçamento interno (valores diferentes nos lados) */
+    padding: 0px 10px 0px 10px;
+    /* propriedade que remove decoração de texto */
+    text-decoration: none;
+}
+
+/* estado de hover dos itens do menu */
+.menu li:hover{
+    /* propriedade de cor do texto */
+    color: black;
+}

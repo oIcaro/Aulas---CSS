@@ -1,0 +1,156 @@
+* {
+    /* A soma dos elementos em PX, ao invés de ser para fora, passa a ser para dentro (Uma caixa de 300px com padding, borda e etc) ao invés de aumentar o tamanho final da caixa e passar dos 300px, soma os valores e desconta do valor fixo imposto na caixa.*/
+    box-sizing: border-box;
+    /* Zerando espaçamento externo */
+    margin: 0;
+    /* zerando espaçamento interno */
+    padding: 0;
+}
+
+body {
+    /* mudando a cor de fundo */
+    background-color: black;
+    /* mudando a cor das letras */
+    color: white;
+    /* alterando a familia da fonte */
+    font-family: sans-serif;
+    /* adicionando espaçamento INTERNO */
+    padding: 20px;
+}
+
+/* CONTAINER PAR - CRIANDO GRADES */
+.container-grid{
+    /* transformando em layout grid */
+    display: grid;
+    /* Adicionando 3 colunas. As colunas da direita e da esquerda tem tamanho fixo de 200px, enquanto a coluna central ocupa todo o tamanho que sobra (descontando os das outras 2 colunas) */
+    grid-template-columns: 200px 1fr 200px;
+    /* Adicionando 3 linhas. A linha de cima com 100px de altura, a linha do meio com tamanho ajustável (minimo de 400px, sem valor maximo), e a linha de baixo com 50px*/
+    grid-template-rows: 100px 300px minmax(400px, auto) 50px;
+    /* espaçamento entre os itens */
+    gap: 20px;
+    /* Desenho do MAPA do site usando o nome das áreas marcadas */
+    grid-template-areas: 
+                "topo     topo     topo"
+                "banner   banner    banner"
+                "sidebar  conteudo propaganda"
+                "rodape   rodape   rodape";
+}
+
+
+/* ELEMENTOS FILHOS - ONDE VÃO FICAR */
+header {
+    /* conectando ao nome que está no MAPA */
+    grid-area: topo;
+    /* mudando cor de fundo */
+    background-color: #1e3a8a;
+    /* adicionando borda */
+    border: 2px solid white;
+    /* transformando o elemento em FLEXBOX 
+    com o flex-direction ROW por PADRÃO*/
+    display: flex;
+    /* alinhando VERTICALMENTE em centro */
+    align-items: center;
+    /* alinhando HORIZONTALMENTE em centro */
+    justify-content: center;
+}
+
+.banner {
+    /* conectando ao nome que está no MAPA */
+    grid-area: banner;
+
+    /* mudando a cor de fundo */
+    background-color: orange;
+
+    /* adicionando borda */
+    border: 2px solid white;
+
+    /* adicionando espaçamento interno */
+    padding: 10px;
+
+}
+
+aside {
+    /* conectando ao nome que está no MAPA */
+    grid-area: sidebar;
+    /* mudando cor de fundo */
+    background-color: #15803d;
+    /* adicionando borda */
+    border: 2px solid white;
+    /* adicionando espaçamento interno */
+    padding: 10px;
+}
+
+main {
+    /* conectando ao nome que está no  MAPA */
+    grid-area: conteudo;
+    /* mudando cor de fundo */
+    background-color: #374151;
+    /* adicionando borda */
+    border: 2px solid white;
+    /* adicionando espaçamento interno */
+}
+
+.propaganda {
+    /* conectando ao nome que está no MAPA */
+    grid-area: propaganda;
+    /* mudando cor de fundo */
+    background-color: #b91c1c;
+    /* adicionando borda */
+    border: 2px solid white;
+    /* adicionando espaçamento interno */
+    padding: 20px;
+}
+
+footer {
+    /* conectando ao nome que está no MAPA */
+    grid-area: rodape;
+    /* mudando cor de fundo */
+    background-color: #6b21a8;
+    /* adicionando borda */
+    border: 2px solid white;
+    /* transformando em FLEX - direction ROW por PADRÃO */
+    display: flex;
+    /* alinhamento VERTICAL */
+    align-items: center;
+    /* alinhamento HORIZONTAL */
+    justify-content: center;
+}
+
+
+/* ESTILIZANDO MENU */
+
+/* lista do menu */
+.menu ul{
+    /* transformando em flex */
+    display: flex;
+    /* retirando discos */
+    list-style-type: none;
+    /* retirando decoração de texto */
+    text-decoration: none;
+}
+
+/* itens do menu */
+.menu li{
+    /* trocando cor de texto */
+    color: white;
+    /* aumentando espessura da fonte */
+    font-weight: bolder;
+    /* adicionando espaçamento interno */
+    padding: 15px;
+}
+
+/* hover do link do menu */
+.menu a:hover{
+    /* mudando cor de fundo */
+    background-color: rgba(99, 16, 16, 0.89);
+    /* espaçamento interno - esquerda e direita */
+    padding: 0px 10px 0px 10px;
+    /* tirando decoração de texto */
+    text-decoration: none;
+}
+
+/* hover dos itens do menu */
+.menu li:hover{
+    /* trocando cor de texto */
+    color: black;
+}

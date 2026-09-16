@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+
+        body{
+            font-size: 3rem;
+            background-color: black;
+            color: white;
+        }
+
+        .grid>div{
+            border: 3px solid yellowgreen;
+        }
+
+        .grid{
+            /* border: 1px solid red; */
+            padding: 10px;
+            display: grid;
+            /* height: 100vh; */
+            grid-template-columns: 1fr 1fr 1fr;
+            /* grid-template-rows: 1fr 2fr 4fr 1fr; */
+            row-gap: 20px;
+            column-gap: 20px;
+
+        }
+
+        .item1{
+            /* Inicio da coluna // Ponto Inicial */
+            grid-column-start: 1;
+
+            /* Fim da coluna // Ponto Final */
+            grid-column-end: 3;
+            /* Consome todo o espaço EM COLUNAS do valor depositado EM INICIO até o valor depositado NO FIM */
+            
+            /* Inicio da linha // Ponto Inicial */
+            grid-row-start: 1;
+
+            /* Final da linha // Ponto Final */
+            grid-row-end: 12;
+            /* Realiza a mesma coisa que a das colunas, mas na forma de linhas dessa vez */
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+        <div class="item4">4</div>
+        <div class="item5">5</div>
+        <div class="item6">6</div>
+        <div class="item7">7</div>
+        <div class="item8">8</div>
+        <div class="item9">9</div>
+        <div class="item10">10</div>
+        <div class="item11">11</div>
+        <div class="item12">12</div>
+    </div>
+</body>
+</html>
